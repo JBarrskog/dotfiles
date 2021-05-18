@@ -35,6 +35,34 @@ export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft
 # export MANPAGER="nvim -c 'set ft=man' -"
 ### END SET MANPAGER ###
 
+### ZSH FEATURES ###
+# Extend globbing
+setopt extendedGlob
+
+# Turn on command substitution in the prompt (and parameter expansion and arithmetic expansion).
+setopt promptsubst
+
+# Completion
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion:*:descriptions' format '%U%F{cyan}%d%f%u'
+
+# Ignore duplicate in history
+setopt hist_ignore_dups
+
+# Nobody need flow control anymore. Troublesome feature.
+setopt noflowcontrol
+
+
+### END ZSH FEATURES ###
+
+
+
 ## Lines configured by zsh-newuser-install
 #HISTFILE=~/.histfile
 #HISTSIZE=1000
@@ -44,12 +72,11 @@ export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft
 ## The following lines were added by compinstall
 #zstyle :compinstall filename '/home/jonas/.zshrc'
 #
-autoload -Uz compinit promptinit
-compinit
+autoload -Uz promptinit
 promptinit
 
 # Set the default prompt theme
-prompt walters
+#prompt walters
 ## End of lines added by compinstall
 
 ### SET THEME ###
