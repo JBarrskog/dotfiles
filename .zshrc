@@ -22,13 +22,8 @@ bindkey -v
 ### END VI MODE ###
 
 ### INCLUDE FILES ###
-INCLUDES_ARRAY=("aliases" "functions/extract")
-for include in $INCLUDES_ARRAY; do
-    if [ -f ~/.config/zsh/$include ]; then
-        source ~/.config/zsh/$include
-    else
-        print "Include ERROR: ~/.config/zsh/$include not found."
-    fi
+for zsh in $(ls -a --color=never ${HOME}/.config/zsh/**/*.zsh); do
+	. "${zsh}"
 done
 ### END INCLUDE FILES ###
 
@@ -56,3 +51,8 @@ promptinit
 # Set the default prompt theme
 prompt walters
 ## End of lines added by compinstall
+
+### SET THEME ###
+# Add path do custom theme directory
+fpath=("$HOME/.config/zsh/prompts" "$fpath[@]")
+### END SET THEME ###
