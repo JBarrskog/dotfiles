@@ -28,4 +28,3 @@ alias df=' df -h'
 # Config for bare-repo with dotfiles
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 #alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
