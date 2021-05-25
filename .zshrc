@@ -5,7 +5,6 @@
 export ZSH=$HOME/.config/zsh
 export CONFIG=$HOME/.config
 export DOTFILES=$HOME/dotfiles
-export ZPLUGDIR=$HOME/.config/zsh/plugins
 
 ### TYPESET ###
 typeset -aU path
