@@ -4,7 +4,7 @@
 
 # Whitelist directories
 !.bin/
-!.bin/*
+!.bin/**
 !.config/
-!.config/*
+!.config/**
 !.zshrc
