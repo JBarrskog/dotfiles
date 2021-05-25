@@ -2,8 +2,6 @@
 if [[ ! -d ~/.zplug ]]; then
     git clone https://github.com/zplug/zplug ~/.zplug
     source ~/.zplug/init.zsh && zplug update --self
-else
-    zplug update --self
 fi
 
 # Load zplug
