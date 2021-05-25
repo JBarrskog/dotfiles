@@ -8,3 +8,5 @@
 !.config/
 !.config/**
 !.zshrc
+!.gitignore
+!.gitconfig
