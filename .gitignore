@@ -1,2 +1,10 @@
+# Ignoring all dotfiles and all folders (in $HOME). This seems to allow git in subfolders...
+.*
+*
+
+# Whitelist directories
+!.bin/
+!.bin/*
+!.config/
 !.config/*
 !.zshrc
