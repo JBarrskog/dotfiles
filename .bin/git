@@ -1,0 +1,7 @@
+# This is a custom version of the git command. If in the .config directory, some flags are added to the git-command
+if [[ ${PWD##$HOME/.config} != $PWD ]] ; then
+    /usr/bin/git --git-dir=$DOTFILES --work-tree=$HOME $@
+else
+    /usr/bin/git $@
+fi
+

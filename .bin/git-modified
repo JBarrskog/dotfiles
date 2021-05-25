@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Grabs timestamps of the latest commits
+
+# Stolen from github.com/nicknisi/dotfiles
+
+git ls-files | xargs -I{} git log -1 --format="%ai {}" {}

@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+# Grab the SHA of the latest commit, and copies it. 
+# I have not considered how this will work with SSH...
+#
+# Stolen from github.com/nicknisi/dotfiles
+
+
+[[ -z $1 ]] && BRANCH=$( git rev-parse --apprev-ref HEAD ) || BRANCH=$1
+LAST_COMMIT_SHA=$( git rev-parse $BRANCH | tail -n 1 )
+echo "$LAST_COMMIT_SHA" | tr -d '\n' | pbcopy
+echo "Copied ${LAST_COMMIT_SHA}."
