@@ -1,5 +1,5 @@
 # This is a custom version of the git command. If in the .config directory, some flags are added to the git-command
-if [ $(brew --prefix) ]; then
+if test "$(command -v brew)"; then
     GIT_PATH=$(brew --prefix)/bin/git
 else
     GIT_PATH=/usr/bin/git
