@@ -1,7 +1,12 @@
 # This is a custom version of the git command. If in the .config directory, some flags are added to the git-command
-if [[ ${PWD##$HOME/.config} != $PWD ]] || [[ ${PWD##$HOME/.bin} != $PWD ]] ; then
-    /usr/bin/git --git-dir=$DOTFILES --work-tree=$HOME $@
+if [ $(brew --prefix) ]; then
+    GIT_PATH=$(brew --prefix)/bin/git
 else
-    /usr/bin/git $@
+    GIT_PATH=/usr/bin/git
+fi
+if [[ ${PWD##$HOME/.config} != $PWD ]] || [[ ${PWD##$HOME/.bin} != $PWD || $HOME == $PWD ]] ; then
+    "$GIT_PATH" --git-dir=$DOTFILES --work-tree=$HOME $@
+else
+    "$GIT_PATH" $@
 fi
 
