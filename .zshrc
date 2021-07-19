@@ -6,6 +6,9 @@ export ZSH=$HOME/.config/zsh
 export CONFIG=$HOME/.config
 export DOTFILES=$HOME/dotfiles
 
+export LC_CTYPE="sv_SE.UTF-8"
+export LC_MESSAGES="en_GB.UTF-8"
+
 ### TYPESET ###
 typeset -aU path
 typeset -A plugins
@@ -35,7 +38,7 @@ bindkey -v
 ### END VI MODE ###
 
 ### INCLUDE FILES ###
-for zsh in $(ls -a --color=never ${HOME}/.config/zsh/**/*.zsh | grep -v "/plugins/"); do
+for zsh in $(/bin/ls -a ${HOME}/.config/zsh/**/*.zsh | grep -v "/plugins/"); do
 	. "${zsh}"
 done
 ### END INCLUDE FILES ###
