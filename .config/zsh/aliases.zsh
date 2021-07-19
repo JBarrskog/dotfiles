@@ -10,6 +10,13 @@ alias .3=' cd ../../..'
 alias .4=' cd ../../../..'
 alias .5=' cd ../../../../..'
 
+# Use nvim instead of vim, if installed
+[[ -n "$(command -v nvim)" ]] && alias vim="nvim"
+
+# Convenience
+alias v='vim'
+alias rmf='rm -rf'
+
 # Confirm before overwriting something
 alias cp="cp -i"
 alias mv='mv -i'
@@ -23,7 +30,8 @@ alias lt=' ls -aT' # tree listing
 alias l.=' ls -a | egrep "^\."'				    # list all files beginning with "."
 
 # Other stuff
-alias df=' df -h'
+alias df=' df -h' # Free diskspace, in gigabytes
+alias du=' du -h -c' # Calculate disk usage for folder
 
 # Config for bare-repo with dotfiles
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
