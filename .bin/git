@@ -5,8 +5,8 @@ else
     GIT_PATH=/usr/bin/git
 fi
 if [[ ${PWD##$HOME/.config} != $PWD ]] || [[ ${PWD##$HOME/.bin} != $PWD || $HOME == $PWD ]] ; then
-    "$GIT_PATH" --git-dir=$DOTFILES --work-tree=$HOME $@
+    "$GIT_PATH" --git-dir=$DOTFILES --work-tree=$HOME "$@"
 else
-    "$GIT_PATH" $@
+    "$GIT_PATH" "$@"
 fi
 
