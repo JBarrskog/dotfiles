@@ -26,6 +26,11 @@ fi
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
+
+# This is for M1-macs, who install homebrew in /opt/homebrew
+if [ -d "/opt/homebrew" ] ;
+  then PATH="/opt/homebrew/bin:$PATH"
+fi
 ### END PATH ###
 
 ### EXPORTS ###
