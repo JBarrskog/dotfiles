@@ -38,8 +38,22 @@
       <key>DefaultBraveFingerprintingV2Setting</key><integer>3</integer>  <!-- 3 = standard (on) -->
       <key>DefaultBraveAdblockSetting</key><integer>2</integer>           <!-- 2 = block ads -->
       <key>PasswordManagerEnabled</key><false/>    <!-- passwords live in 1Password -->
+      <key>AutofillAddressEnabled</key><false/>    <!-- 1Password owns autofill -->
+      <key>AutofillCreditCardEnabled</key><false/>
+      <key>SafeBrowsingProtectionLevel</key><integer>1</integer>  <!-- 1 = standard; Brave has no enhanced -->
+      <key>DownloadRestrictions</key><integer>4</integer>         <!-- 4 = block malicious downloads -->
+      <key>WebRtcIPHandling</key><string>disable_non_proxied_udp</string>  <!-- no local/public IP leak -->
+      <key>DnsOverHttpsMode</key><string>off</string>  <!-- keep the home resolver authoritative -->
+
+      <!-- Privacy features Brave enables by default, locked so they stay on -->
+      <key>BraveDeAmpEnabled</key><true/>
+      <key>BraveDebouncingEnabled</key><true/>     <!-- strip bounce-tracking redirects -->
+      <key>BraveReduceLanguageEnabled</key><true/> <!-- language fingerprinting -->
+      <key>BraveTrackingQueryParametersFilteringEnabled</key><true/>
+      <key>BraveGlobalPrivacyControlEnabled</key><true/>
 
       <!-- Search -->
+      <key>SearchSuggestEnabled</key><false/>      <!-- keystrokes stay local -->
       <key>DefaultSearchProviderEnabled</key><true/>
       <key>DefaultSearchProviderName</key><string>DuckDuckGo</string>
       <key>DefaultSearchProviderKeyword</key><string>duckduckgo.com</string>
