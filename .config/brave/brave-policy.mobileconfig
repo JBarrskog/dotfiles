@@ -38,8 +38,13 @@
       <key>DefaultBraveFingerprintingV2Setting</key><integer>3</integer>  <!-- 3 = standard (on) -->
       <key>DefaultBraveAdblockSetting</key><integer>2</integer>           <!-- 2 = block ads -->
       <key>PasswordManagerEnabled</key><false/>    <!-- passwords live in 1Password -->
-      <key>AutofillAddressEnabled</key><false/>    <!-- 1Password owns autofill -->
-      <key>AutofillCreditCardEnabled</key><false/>
+      <key>AutofillSettings</key>                   <!-- 1Password owns autofill -->
+      <array>
+        <dict>
+          <key>url_pattern</key><string>*</string>
+          <key>blocked_types</key><array><string>all</string></array>
+        </dict>
+      </array>
       <key>SafeBrowsingProtectionLevel</key><integer>1</integer>  <!-- 1 = standard; Brave has no enhanced -->
       <key>DownloadRestrictions</key><integer>4</integer>         <!-- 4 = block malicious downloads -->
       <key>WebRtcIPHandling</key><string>disable_non_proxied_udp</string>  <!-- no local/public IP leak -->
@@ -52,12 +57,8 @@
       <key>BraveTrackingQueryParametersFilteringEnabled</key><true/>
       <key>BraveGlobalPrivacyControlEnabled</key><true/>
 
-      <!-- Search -->
+      <!-- Search (default engine is set by hand: Brave rejects DefaultSearchProvider* from a manually installed profile) -->
       <key>SearchSuggestEnabled</key><false/>      <!-- keystrokes stay local -->
-      <key>DefaultSearchProviderEnabled</key><true/>
-      <key>DefaultSearchProviderName</key><string>DuckDuckGo</string>
-      <key>DefaultSearchProviderKeyword</key><string>duckduckgo.com</string>
-      <key>DefaultSearchProviderSearchURL</key><string>https://duckduckgo.com/?q={searchTerms}</string>
     </dict>
   </array>
 </dict>
