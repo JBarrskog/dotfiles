@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadDisplayName</key><string>Brave policy (Bli säker-podden baseline)</string>
+  <key>PayloadDescription</key><string>Turns off Brave's add-on services and telemetry, keeps Shields on, uses DuckDuckGo. Features Nikka keeps (Speedreader, Wayback Machine, Tor windows) are left unset so they stay user-controlled.</string>
+  <key>PayloadIdentifier</key><string>local.jbarrskog.brave-policy</string>
+  <key>PayloadUUID</key><string>9ACEF226-5B9B-444C-BAFC-5AC4CB3A72A8</string>
+  <key>PayloadType</key><string>Configuration</string>
+  <key>PayloadScope</key><string>User</string>
+  <key>PayloadVersion</key><integer>1</integer>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key><string>com.brave.Browser</string>
+      <key>PayloadIdentifier</key><string>local.jbarrskog.brave-policy.settings</string>
+      <key>PayloadUUID</key><string>2CA7851D-1C75-4E12-8E2F-15C991736874</string>
+      <key>PayloadVersion</key><integer>1</integer>
+
+      <!-- Add-on services Nikka calls bloatware -->
+      <key>BraveRewardsDisabled</key><true/>       <!-- Rewards, BAT and Brave Ads -->
+      <key>BraveWalletDisabled</key><true/>        <!-- crypto wallet -->
+      <key>BraveVPNDisabled</key><true/>           <!-- Guardian-based VPN; use Mullvad -->
+      <key>BraveAIChatEnabled</key><false/>        <!-- Leo assistant -->
+      <key>BraveLocalAIEnabled</key><false/>       <!-- on-device AI models -->
+      <key>BraveNewsDisabled</key><true/>
+      <key>BraveTalkDisabled</key><true/>
+      <key>BravePlaylistEnabled</key><false/>
+      <key>EmailAliasesEnabled</key><false/>       <!-- 5-alias limit; 1Password covers this -->
+
+      <!-- Telemetry Origin removes -->
+      <key>BraveP3AEnabled</key><false/>           <!-- product analytics -->
+      <key>BraveStatsPingEnabled</key><false/>     <!-- daily usage ping -->
+      <key>BraveWebDiscoveryEnabled</key><false/>  <!-- Web Discovery Project -->
+
+      <!-- Protection -->
+      <key>BlockThirdPartyCookies</key><true/>
+      <key>DefaultBraveFingerprintingV2Setting</key><integer>3</integer>  <!-- 3 = standard (on) -->
+      <key>DefaultBraveAdblockSetting</key><integer>2</integer>           <!-- 2 = block ads -->
+      <key>PasswordManagerEnabled</key><false/>    <!-- passwords live in 1Password -->
+
+      <!-- Search -->
+      <key>DefaultSearchProviderEnabled</key><true/>
+      <key>DefaultSearchProviderName</key><string>DuckDuckGo</string>
+      <key>DefaultSearchProviderKeyword</key><string>duckduckgo.com</string>
+      <key>DefaultSearchProviderSearchURL</key><string>https://duckduckgo.com/?q={searchTerms}</string>
+    </dict>
+  </array>
+</dict>
+</plist>
